@@ -1,20 +1,20 @@
-const { Schema, model} = require('mongosse');
+const { Schema, model} = require('mongoose');
 
-const userSchema = new Schema(
+const userSchema = new Schema({
 
-)
+
 
 username: {
-    type: String
+    type: String,
     unique: true,
     required: true,
     trim: true
 },
 email: {
-    type: String
+    type: String,
     unique: true,
     required: true,
-    match:
+    match: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 },
 thoughts: [
     {
